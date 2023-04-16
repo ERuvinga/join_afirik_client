@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* other class*/
+@import url('../styles/NavBar.css');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,4 +19,8 @@
   }
 }
 
-body {}
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #F9F9FC;
+}

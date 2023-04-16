@@ -1,12 +1,15 @@
 import HeadApp from '../Components/Head'
+import Nav from '../Components/NavBar'
 
 export default function Home() {
   return (
     <>
       <HeadApp />
       <div>
-        <p>Salut</p>
+        <Nav />
+        <div>
 
+        </div>
       </div>
     </>
 
