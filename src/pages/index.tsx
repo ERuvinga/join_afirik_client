@@ -5,11 +5,9 @@ export default function Home() {
   return (
     <>
       <HeadApp />
+      <Nav />
       <div>
-        <Nav />
-        <div>
 
-        </div>
       </div>
     </>
 
