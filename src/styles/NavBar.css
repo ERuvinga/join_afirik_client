@@ -7,9 +7,38 @@
 
 .NavLogo {
     width: 90px;
-    height: 40px
+    height: 70%;
+}
+
+
+.persona,
+.bell {
+    padding: 5px;
+    border: #8186A0 solid 1px;
+    border-radius: 50%;
+}
+
+.bell {
+    padding: 1px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.Logout {
+    background-color: #2b23b5;
+    color: white;
+    border-radius: 30px;
+    padding: 7px 17px;
 }
 
 .border {
     border: 1px solid black;
+}
+
+.searchBtn {
+    border: #8186A0 solid 1px;
+    border-radius: 30px;
+
 }
