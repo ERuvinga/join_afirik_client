@@ -5,6 +5,8 @@ import LevelFilter from '../Components/FilterLevl'
 import FilterAvailble from '../Components/FilterAvailable'
 import LanguageFilter from '../Components/FilterLanguage'
 import DomainFilter from '../Components/FilterDomaines'
+import DescriptionUser from '../Components/DataComponent'
+import Menu from '../Components/Menu'
 
 // import fontAweson
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,20 +18,18 @@ export default function Home() {
     <>
       <HeadApp />
       <Nav />
-      <div className='h-[92vh] w-[95%] mx-auto flex justify-between'>
-        <div className='border h-[100%] w-[28%]'>
-
-        </div>
-        <div className=' h-[100%] w-[82%] '>
-          <div className=' w-[100%] h-[15%] flex items-center '>
+      <div className='w-[95%] mx-auto pb-4 flex justify-between'>
+        <Menu />
+        <div className=' w-[85%]'>
+          <div className=' w-[100%] h-[100px] flex items-center '>
             <span className='text-[#8186A0] text-[.8em] font-bold pr-32'>Trouvez un travail</span>
             <SelectFilter />
           </div>
-          <div className=' w-[100%] h-[85%] mx-auto flex justify-between'>
-            <div className='ContDescrptUser w-[75%] h-[100%]'>
-
+          <div className=' w-[100%] mx-auto flex justify-between'>
+            <div className='ContDescrptUser w-[75%] p-4 flex flex-col space-y-2'>
+              <DescriptionUser />
             </div>
-            <div className=' w-[25%] h-[100%] flex flex-col items-center space-y-2'>
+            <div className=' w-[25%] flex flex-col items-center space-y-2'>
               <div className='blocFilter w-[95%] px-4 pt-8 pb-2 flex flex-col space-y-3'>
                 <input type='text' placeholder='Trouver un travail' className='searcWorkField text-[.6em] w-[80%] h-[22px] px-2' />
                 <span className='text-[.6em] text-[#8186A0] font-semibold'>Filter par niveau</span>

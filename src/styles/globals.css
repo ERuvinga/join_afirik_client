@@ -5,6 +5,7 @@
 /* other class*/
 @import url('../styles/NavBar.css');
 @import url('../styles/index.css');
+@import url('../styles/elie.css');
 
 body {
   height: 100vh;
