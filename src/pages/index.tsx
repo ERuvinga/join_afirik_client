@@ -12,6 +12,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdd, faKey, faUser, faBell, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
+  //create array for Menu WebSite
+  const arrayWeb = [];
+  for (let i = 0; i < 20; i++) {
+    arrayWeb[i] = i;
+  }
   const selected = 0;
   const DataOfMenu = [
     {
@@ -27,12 +32,13 @@ export default function Home() {
       icone: faBell
     }
   ]
+
   return (
     <>
       <HeadApp />
       <Nav />
-      <div className='w-[95%] mx-auto flex justify-between'>
-        <div className='border w-[25%] flex flex-col items-center  pt-20 space-y-4'>
+      <div className='w-[95%] mx-auto pb-4 flex justify-between'>
+        <div className=' w-[25%] flex flex-col items-center  pt-20 space-y-4'>
           <div className=' h-[90px] w-[90px] '>
             <Image
               src="/user.jpg"
@@ -62,6 +68,18 @@ export default function Home() {
                     icon={faArrowRight} />
                 </div>)
             }
+          </div>
+          <div className='Menu w-[90%] p-3 flex flex-col space-y-2'>
+            {
+              arrayWeb.map((value, index) =>
+                <div key={index} className='w-[100%] flex items-center justify-between'>
+                  <Image src="/images/web.png" alt="Web Site" className="iconeWeb " width={1} height={1} priority />
+                  <span className='text-[.55em] font-semibold '>Website developement</span>
+                  <span className='text-[.55em] font-semibold webNumber'>230</span>
+                </div>
+              )
+            }
+
           </div>
         </div>
         <div className=' w-[85%] '>
