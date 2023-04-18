@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import HeadApp from '../Components/Head'
 import Nav from '../Components/NavBar'
 import SelectFilter from '../Components/ListFilter'
@@ -8,20 +9,63 @@ import DomainFilter from '../Components/FilterDomaines'
 
 // import fontAweson
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAdd } from '@fortawesome/free-solid-svg-icons'
+import { faAdd, faKey, faUser, faBell, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
-
+  const selected = 0;
+  const DataOfMenu = [
+    {
+      texte: 'Mon Profil',
+      icone: faUser
+    },
+    {
+      texte: 'Mot de passe & securité',
+      icone: faKey
+    },
+    {
+      texte: 'Notification',
+      icone: faBell
+    }
+  ]
   return (
     <>
       <HeadApp />
       <Nav />
-      <div className='h-[92vh] w-[95%] mx-auto flex justify-between'>
-        <div className='border h-[100%] w-[28%]'>
-
+      <div className='w-[95%] mx-auto flex justify-between'>
+        <div className='border w-[25%] flex flex-col items-center  pt-20 space-y-4'>
+          <div className=' h-[90px] w-[90px] '>
+            <Image
+              src="/user.jpg"
+              alt="User"
+              className="imageProfil"
+              width={100}
+              height={150}
+              priority
+            />
+          </div>
+          <span className='text-[#2b23b5] font-bold text-[.8em]'>Elie Ruvinga</span>
+          <span className='text-[#8186A0] text-[.6em]'>ruvingaelie@gmail.com</span>
+          <div className='Menu w-[90%] p-3 flex flex-col space-y-2'>
+            {
+              DataOfMenu.map((value, index) =>
+                <div
+                  className={selected == index ? 'MenuSelected flex items-center justify-between p-2' : ' flex items-center justify-between px-2 py-1 text-[#2b23b5]'}
+                  key={index}>
+                  <div className=' flex items-center'>
+                    <FontAwesomeIcon
+                      className={selected == index ? 'mr-4 text-[1.1em] text-[#f]' : 'text-[1.1em] mr-4 text-[#8186A0]'}
+                      icon={value.icone} />
+                    <span className='text-[.65em]'>{value.texte}</span>
+                  </div>
+                  <FontAwesomeIcon
+                    className={selected == index ? 'mr-4 text-[#f]' : 'mr-4 text-[#2b23b5]'}
+                    icon={faArrowRight} />
+                </div>)
+            }
+          </div>
         </div>
-        <div className=' h-[100%] w-[82%] '>
-          <div className=' w-[100%] h-[15%] flex items-center '>
+        <div className=' w-[85%] '>
+          <div className=' w-[100%] h-[100px] flex items-center '>
             <span className='text-[#8186A0] text-[.8em] font-bold pr-32'>Trouvez un travail</span>
             <SelectFilter />
           </div>
