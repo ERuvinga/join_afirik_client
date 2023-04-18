@@ -10,7 +10,7 @@ import Menu from '../Components/Menu'
 
 // import fontAweson
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAdd, faKey, faUser, faBell, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faAdd } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
 

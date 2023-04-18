@@ -1,0 +1,31 @@
+/*Style for elie page */
+.ContDescrptproject {
+    background-color: #fff;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.inputExig {
+    padding: 2px 3px;
+    border: solid 1px #8186A0;
+    border-radius: 3px;
+}
+
+.ContDescrptproject textarea {
+    border: solid 1px #8186A0;
+    border-radius: 5px;
+    padding: 2px 3px;
+    resize: none;
+
+}
+
+.UploadFile {
+    border: #8186A0 solid 1px;
+    border-radius: 4px;
+}
+
+.fileBtn {
+    padding: 2px 12px;
+    border: #8186A0 solid 1px;
+    border-radius: 3px;
+}
