@@ -1,0 +1,40 @@
+/*style of navBar*/
+.ContainerNav {
+    background-color: #fff;
+    border-bottom: 1px solid #E2E3E9;
+    box-shadow: 0px 0px 10px #E2E3E9;
+}
+
+.NavLogo {
+    width: 90px;
+    height: 70%;
+}
+
+.bell,
+.persona {
+    padding: 1px;
+    border: #8186A0 solid 1px;
+    border-radius: 50%;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+.Logout {
+    background-color: #2b23b5;
+    color: white;
+    border-radius: 30px;
+    padding: 7px 17px;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.searchBtn {
+    border: #8186A0 solid 1px;
+    border-radius: 30px;
+
+}

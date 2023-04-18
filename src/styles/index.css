@@ -1,0 +1,50 @@
+/*Style for index page*/
+.NavselectField {
+    background-color: #efefef;
+    border-radius: 30px;
+}
+
+.selectField {
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+}
+
+.ContDescrptUser {
+    background-color: #e0e0e0;
+    border-radius: 15px 15px 0px 0px;
+}
+
+/*Filters*/
+.blocFilter {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 4px #F9F9FC;
+}
+
+.addProjetBtn {
+    color: #2b23b5;
+    background-color: #FFF;
+    border-radius: 25px;
+}
+
+.searcWorkField {
+    border: #8186A0 solid 1px;
+    border-radius: 20px;
+}
+
+.levelSelected {
+    color: #2b23b5;
+}
+
+.NoSelected {
+    color: transparent;
+    border: #c0c0c0 solid 1px;
+    border-radius: 50%;
+}
+
+.blocFilter select {
+    padding: 2px 0;
+    border: #8186A0 solid 1px;
+    border-radius: 3px;
+}
