@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 /* other class*/
-@import url('../styles/NavBar.css');
-@import url('../styles/index.css');
-@import url('../styles/elie.css');
+@import '../styles/NavBar.css';
+@import '../styles/index.css';
+@import '../styles/elie.css';
 
 body {
   height: 100vh;
