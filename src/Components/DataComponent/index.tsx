@@ -13,7 +13,7 @@ const DescriptionUser = () => {
                     <div className=" text-[.6em] text-[#8186A0] flex items-center space-x-3">
                         <Image src="/images/shield.png" alt=" Shield" className="iconDescrpt" width={1} height={1} priority />
                         <span className="dollars"> $12 300 </span>
-                        <Image src="/images/star.png" alt=" Shield" className=" iconDescrpt" width={1} height={1} priority />
+                        <Image src="/images/star.png" alt=" star" className=" iconDescrpt" width={1} height={1} priority />
                     </div>
                 </div>
                 <div className="linet w-[100%]"></div>
