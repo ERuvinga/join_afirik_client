@@ -4,11 +4,10 @@
 
 /* other class*/
 @import '../styles/NavBar.css';
-@import '../styles/index.css';
+@import '../styles/Leading.css';
 @import '../styles/elie.css';
 
 body {
-  height: 100vh;
   width: 100%;
   background-color: #f5f5f5;
 }

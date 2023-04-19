@@ -27,7 +27,7 @@ const Menu = () => {
     ]
 
     return (
-        <div className=' w-[25%] flex flex-col items-center  pt-20 space-y-4'>
+        <div className='border w-[25%] flex flex-col items-center pt-20 space-y-4'>
             <div className=' h-[90px] w-[90px] '>
                 <Image
                     src="/user.jpg"
@@ -58,7 +58,7 @@ const Menu = () => {
                         </div>)
                 }
             </div>
-            <div className='Menu w-[90%] p-3 flex flex-col space-y-2'>
+            <div className=' border Menu w-[90%] p-3 flex flex-col space-y-2'>
                 {
                     arrayWeb.map((value, index) =>
                         <div key={index} className='w-[100%] flex items-center justify-between'>
