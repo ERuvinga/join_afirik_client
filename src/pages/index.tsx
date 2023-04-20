@@ -5,14 +5,41 @@ import LevelFilter from '../Components/FilterLevl'
 import FilterAvailble from '../Components/FilterAvailable'
 import LanguageFilter from '../Components/FilterLanguage'
 import DomainFilter from '../Components/FilterDomaines'
-import DescriptionUser from '../Components/DataComponent'
+import DescriptionUser from '../Components/DataJob'
 import Menu from '../Components/Menu'
+import LoadingComponent from '../Components/LoadinComponent'
 
 // import fontAweson
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdd } from '@fortawesome/free-solid-svg-icons'
 
+import { useEffect, useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { JobstList } from '../Components/State'
+
 export default function Home() {
+  let jobs: [] | any;
+  const baseUrl = 'https://join-afrik.onrender.com/api/jobs/recents';
+  const JobRecoilState = useRecoilState(JobstList);
+  const [Loading, setLoading] = useState(true)
+
+  //assign
+  jobs = JobRecoilState[0];
+  const setJob = JobRecoilState[1];
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(baseUrl)
+      .then(dataJobs => {
+        dataJobs.json()
+          .then(Jobs => {
+            setJob(Jobs.data);
+            setLoading(false);
+          })
+      })
+
+      .catch(error => console.log(error))
+  }, []);
 
   return (
     <>
@@ -26,9 +53,16 @@ export default function Home() {
             <SelectFilter />
           </div>
           <div className=' w-[100%] mx-auto flex justify-between'>
-            <div className='ContDescrptUser w-[75%] p-4 flex flex-col space-y-2'>
-              <DescriptionUser />
-            </div>
+            {
+              Loading ? <LoadingComponent /> :
+
+                <div className='ContDescrptUser w-[75%] p-4 flex flex-col space-y-2'>
+                  {
+                    jobs.map((job: any, index: any) => <DescriptionUser key={index} data={job} />)
+                  }
+                </div>
+
+            }
             <div className=' w-[25%] flex flex-col items-center space-y-2'>
               <div className='blocFilter w-[95%] px-4 pt-8 pb-2 flex flex-col space-y-3'>
                 <input type='text' placeholder='Trouver un travail' className='searcWorkField text-[.6em] w-[80%] h-[22px] px-2' />
@@ -63,6 +97,6 @@ export default function Home() {
         </div>
       </div>
     </>
-
   )
 }
+
