@@ -14,18 +14,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdd } from '@fortawesome/free-solid-svg-icons'
 
 import { useEffect, useState } from 'react'
-import { useRecoilState } from 'recoil'
-import { JobstList } from '../Components/State'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { JobstList, jobFilters, filteredLevelState } from '../Components/State'
 
 export default function Home() {
-  let jobs: [] | any;
+  let jobFilter: [] | any;
   const baseUrl = 'https://join-afrik.onrender.com/api/jobs/recents';
-  const JobRecoilState = useRecoilState(JobstList);
-  const [Loading, setLoading] = useState(true)
+  jobFilter = useRecoilValue(filteredLevelState); //setter to update list render
+
 
   //assign
-  jobs = JobRecoilState[0];
-  const setJob = JobRecoilState[1];
+  const [jobs, setJob] = useRecoilState(JobstList);
+  const [Loading, setLoading] = useState(true)
 
   useEffect(() => {
     setLoading(true);
@@ -35,6 +35,7 @@ export default function Home() {
           .then(Jobs => {
             setJob(Jobs.data);
             setLoading(false);
+
           })
       })
 
@@ -58,7 +59,7 @@ export default function Home() {
 
                 <div className='ContDescrptUser w-[75%] p-4 flex flex-col space-y-2'>
                   {
-                    jobs.map((job: any, index: any) => <DescriptionUser key={index} data={job} />)
+                    jobFilter.map((job: any, index: any) => <DescriptionUser key={index} data={job} />)
                   }
                 </div>
 

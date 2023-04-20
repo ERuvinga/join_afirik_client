@@ -2,14 +2,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 import { useRecoilState } from 'recoil';
-import { levelFilter } from '../State';
+import { levelFilter, } from '../State';
 
 const levlFilter = () => {
     let filterlevel: any
-    const Filter = useRecoilState(levelFilter)
+    const Filter = useRecoilState(levelFilter);
+
 
     filterlevel = Filter[0];
     const setLevelFilter = Filter[1]; //setter function to change data of levelfilter
+
 
     const dataLevel = [
         {
@@ -36,6 +38,7 @@ const levlFilter = () => {
             else {
                 return item
             }
+
         })
     };
 
