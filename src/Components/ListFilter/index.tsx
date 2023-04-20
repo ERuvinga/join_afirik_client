@@ -1,6 +1,15 @@
+import { useRecoilState } from "recoil";
+import { AllRecentSavedFilter } from "../State";
 
 const listFilter = () => {
-    const fieldSelected = 0;
+    let fieldSelected: any;
+
+    // recoil data
+    const Field = useRecoilState(AllRecentSavedFilter);
+    fieldSelected = Field[0]
+    const setFieldSelected = Field[1];
+
+
     let selectedFilter = [
         {
             content: 'Tous'
@@ -15,7 +24,12 @@ const listFilter = () => {
     return (
         <div className="NavselectField  flex items-center justify-between">
             {
-                selectedFilter.map((value, i) => <span className={fieldSelected == i ? "selectField  text-[.75em] px-8 p-2" : " text-[#8186A0] text-[.75em] mx-1 px-5 p-1"} key={i}>{value.content}</span>)
+                selectedFilter.map((value, i) =>
+                    <span onClick={() => {
+                        setFieldSelected((i))
+                    }
+                    }
+                        className={fieldSelected == i ? " choise selectField  text-[.75em] px-8 p-2" : "choise text-[#8186A0] text-[.75em] mx-1 px-5 p-1"} key={i}>{value.content}</span>)
             }
         </div>
     )

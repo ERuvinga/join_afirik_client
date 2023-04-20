@@ -1,11 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-const DescriptionUser = () => {
+interface dataofJob {
+    data: any;
+}
 
+const DescriptionUser = (datasJobs: dataofJob) => {
     return (
         <>
-            <div className=' DescriptUser w-[100%] py-2'>
+            <div className='DescriptUser w-[100%] py-2'>
                 <div className="py-2 px-6 flex items-center justify-between">
                     <span className=" font-bold text-[.7em]">
                         Rediger la documentation de mon nouveau systeme de controle
@@ -28,14 +31,11 @@ const DescriptionUser = () => {
                 <div className="lineb w-[100%] my-2"></div>
                 <div className="py-2 px-6  flex items-center justify-between">
                     <div className=" flex items-center space-x-2">
-                        <Image src="/images/user.png"
-                            alt=" user"
-                            className="imageDescrpt "
-                            width={1}
-                            height={1}
-                            priority
+                        <img src={datasJobs.data.client.avatar}
+                            alt=" Client"
+                            className="imageClient "
                         />
-                        <span className=" text-[.66em] font-bold">Elie Ruvinga</span>
+                        <span className=" text-[.66em] font-bold">{`${datasJobs.data.client.lName} ${datasJobs.data.client.fName}`}</span>
                     </div>
                     <div className="flex items-center justify-between">
                         <span className="flex items-center space-x-1 ">
