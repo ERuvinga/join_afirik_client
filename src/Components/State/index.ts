@@ -7,3 +7,5 @@ const ExigenceList = atom(
         default: []
     }
 );
+
+export { ExigenceList };

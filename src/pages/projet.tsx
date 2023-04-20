@@ -6,7 +6,21 @@ import Menu from '@/Components/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
+// recoil.js
+import { useRecoilState } from 'recoil';
+import { useState } from 'react';
+import { ExigenceList } from '../Components/State'
+
 const Elie = () => {
+    //hooks
+    let exigences: [] | any;
+    const [newExig, setNewExig] = useState('Ex: Maitrise de javascript');
+    const exigencesState = useRecoilState(ExigenceList);
+
+    //affectation
+    exigences = exigencesState[0];
+    const setExigence = exigencesState[1]
+
     const dataFilter = [
         {
             text: 'Titre',
@@ -30,12 +44,26 @@ const Elie = () => {
         }
     ];
 
-    const dataExig = [
-        1, 2, 3, 4
-    ]
+    const addExigence = () => {
+        setExigence((lastExigenceTab: any) => [
+            ...lastExigenceTab,
+            {
+                value: newExig
+            }
+        ]);
+
+    };
+
+    const deleteExigence = (index: number) => {
+        let tabExigence = [...exigences];
+        tabExigence.splice(index, 1);
+        // update tab
+        setExigence(() => tabExigence);
+    }
 
     return (
         <>
+
             <Header />
             <Nav />
             <div className='w-[95%] mx-auto pb-4 flex justify-between'>
@@ -46,7 +74,7 @@ const Elie = () => {
                     </div>
                     <div className=' w-[100%] mx-auto flex justify-between'>
                         <div className='ContDescrptproject w-[75%] p-4 flex'>
-                            <div className='flex flex-col  w-[55%] px-1 '>
+                            <div className='flex flex-col w-[55%] px-1 '>
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold'>Titre</span>
                                 <div className='w-[100%] flex my-1 items-center'>
                                     <input className='text-[.65em] w-[100%] text-[#8186A0] font-normal inputExig' type='text' placeholder="Ex: Site Web d'information" />
@@ -70,22 +98,29 @@ const Elie = () => {
                                 </div>
 
                             </div>
-                            <div className='flex flex-col w-[45%] h-[200px] px-1 '>
+                            <div className='flex flex-col w-[45%] px-1'>
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold '>Exigences</span>
                                 <div className='flex flex-col w-[100%] my-1 space-y-1'>
                                     <span className='flex flex-col space-y-1'>
                                         {
-                                            dataExig.map((value, index) =>
+                                            exigences.map((item: any, index: any) =>
                                                 <div className='w-[100%] flex space-x-1 items-center' key={index}>
-                                                    <input className='text-[.65em] w-[90%] text-[#8186A0] font-normal inputExig' type='text' placeholder='Ex: Maitrise de javascript' />
-                                                    <FontAwesomeIcon className='text-[.85em] text-[#b52323]' icon={faMinusCircle} />
+                                                    <input className='text-[.65em] w-[90%] text-[#8186A0] font-normal inputExig'
+                                                        type='text'
+                                                        placeholder={item.value} />
+                                                    <FontAwesomeIcon className='text-[.85em] text-[#b52323]' icon={faMinusCircle} onClick={() => deleteExigence(index)} />
                                                 </div>)
                                         }
 
                                     </span>
                                     <div className='w-[100%] flex space-x-1 items-center'>
-                                        <input className='text-[.65em] w-[90%] text-[#8186A0] font-normal inputExig' type='text' placeholder='Ex: Maitrise de javascript' />
-                                        <FontAwesomeIcon className='text-[.85em] text-[#2b23b5]' icon={faPlusCircle} />
+                                        <input className='text-[.65em] w-[90%] text-[#8186A0] font-normal inputExig'
+                                            type='text'
+                                            placeholder='Ex: Maitrise de javascript'
+                                            onChange={(event) => {
+                                                console.log(event.target.value)
+                                            }} />
+                                        <FontAwesomeIcon className='text-[.85em] text-[#2b23b5]' icon={faPlusCircle} onClick={addExigence} />
                                     </div>
                                 </div>
 
