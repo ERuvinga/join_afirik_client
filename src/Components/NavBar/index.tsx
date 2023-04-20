@@ -26,25 +26,25 @@ const DataLinks = [
 
 const Nav = () => {
     return (
-        <nav className='ContainerNav w-[100%] h-[55px] flex flex-row px-10 items-center justify-around'>
-            <div className=' w-[45%] h-[100%] flex flex-row items-center justify-between'>
+        <nav className='ContainerNav w-[100%] mx-auto space-y-2 flex flex-col items-center justify-between py-2 md:flex-row md:items-center md:justify-around px-10 '>
+            <div className=' w-[100%] md:w-[45%] md:h-[100%] flex items-center justify-between'>
                 <img alt='logo' src='/favicon.png' className=' NavLogo' />
-                <div className=' w-[45%] md:w-[80%] p-1 flex items-center justify-around'>
+                <div className='p-1  w-[70%] flex items-center justify-between space-x-4'>
                     {DataLinks.map((datas, index) =>
                         <Link
-                            className=' flex items-center'
+                            className='  flex items-center'
                             href={datas.link}
                             key={index}>
                             {
-                                <span className=' text-[.72em] text-[#8186A0]'>{datas.content}</span>
+                                <span className=' text-[.55em] md:text-[.72em] text-[#8186A0]'>{datas.content}</span>
                             }
                         </Link>)}
                 </div>
             </div>
-            <div className=' w-[45%] h-[100%] flex flex-row items-center justify-between'>
-                <div className='searchBtn min-w-[250px] h-[30px]  p-1 flex items-center justify-around'>
+            <div className=' w-[100%] md:w-[45%] h-[100%] flex flex-row items-center justify-between'>
+                <div className='searchBtn hidden  min-w-[20%] h-[25px]  p-1 sm:flex items-center justify-around'>
                     <FontAwesomeIcon className=' text-[#8186A0] w-[18px] h-[18px] ' icon={faSearch} />
-                    <input type='text' placeholder='Trouver un Emploi' className='  text-[.6em]  w-[150px] h-[90%]' />
+                    <input type='text' placeholder='Trouver un Emploi' className=' text-[.48em]  w-[50%] h-[90%]' />
                     <FontAwesomeIcon className=' w-[30px] h-[10px]' icon={faArrowRight} />
                 </div>
                 <div className=' p-1 w-[110px] flex items-center '>
@@ -55,11 +55,11 @@ const Nav = () => {
                         width={22}
                         height={22}
                         priority />
-                    <span className='text-[.7em] font-bold text-[#8186A0]'>Elie Ruvinga</span>
+                    <span className='text-[.5em] lg:text-[.7em] font-bold text-[#8186A0]'>Elie Ruvinga</span>
                 </div>
                 <Image src="/images/bell.png"
                     alt="bell"
-                    className="bell mx-1"
+                    className="bell mr-4 lg:mx-1"
                     width={28}
                     height={28}
                     priority />
