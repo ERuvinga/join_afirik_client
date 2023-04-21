@@ -22,14 +22,18 @@ const listFilter = () => {
         }
     ]
     return (
-        <div className="NavselectField  flex items-center justify-between">
+        <div className="NavselectField md:mr-4 flex items-center justify-between">
             {
                 selectedFilter.map((value, i) =>
                     <span onClick={() => {
                         setFieldSelected((i))
                     }
                     }
-                        className={fieldSelected == i ? " choise selectField  text-[.75em] px-8 p-2" : "choise text-[#8186A0] text-[.75em] mx-1 px-5 p-1"} key={i}>{value.content}</span>)
+                        className={
+                            fieldSelected == i ? " choise selectField  text-[.75em] px-8 py-1 md_lg:py-2 " : "choise text-[#8186A0] text-[.75em] px-7 md_lg:px-7 py-1 md_lg:py-2"}
+                        key={i}>
+                        {value.content}
+                    </span>)
             }
         </div>
     )

@@ -34,7 +34,7 @@ const avalFilter = () => {
     };
 
     return (
-        <div className=" flex flex-col space-y-2">
+        <div className=" mt-2 flex space-x-3 md_lg:flex-col md_lg:space-x-0 md_lg:space-y-2 ">
             {
                 dataAvailable.map((value, index) =>
                     <div
@@ -42,9 +42,9 @@ const avalFilter = () => {
                             changeFilter(index)
                         }
                         }
-                        className={filterAval == index ? "levelSelected font-semibold flex items-center choise" : " choise flex items-center"}
+                        className={filterAval == index ? " Selected flex items-center choise" : " choise flex items-center"}
                         key={index}>
-                        <FontAwesomeIcon icon={faCircle} className={filterAval == index ? '  mr-2 text-[.8em]' : '  mr-2 text-[.8em] NoSelected'} />
+                        <FontAwesomeIcon icon={faCircle} className={filterAval == index ? 'mr-1  md_lg:mr-2 text-[.8em]' : 'mr-1 md_lg:mr-2 text-[.8em] NoSelected'} />
                         <span className={filterAval == index ? 'text-[.65em]' : ' text-[.65em] text-[#c0c0c0]'}>{value.content}</span>
                     </div>)
             }

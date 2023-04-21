@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 const levlFilter = () => {
-    const selected = 0;
+    const selected = null;
     const dataAvailable_1 = [
         {
             domain: 'Javascript'
@@ -41,24 +41,24 @@ const levlFilter = () => {
         }
     ]
     return (
-        <div className=' flex items-center justify-between'>
+        <div className='mt-2 space-x-4 flex items-center justify-between'>
             <div className=" flex flex-col space-y-2">
                 {
                     dataAvailable_1.map((value, index) =>
-                        <div className={selected == index ? "  flex items-center" : " flex items-center"}
+                        <div className={selected == index ? " choise Selected flex items-center" : "choise flex items-center"}
                             key={index}>
-                            <FontAwesomeIcon icon={faCircle} className={selected == index ? ' NoSelected mr-2 text-[.8em]' : '  mr-2 text-[.8em] NoSelected'} />
-                            <span className={selected == index ? 'text-[.65em] text-[#c0c0c0]' : ' text-[.65em] text-[#c0c0c0]'}>{value.domain}</span>
+                            <FontAwesomeIcon icon={faCircle} className={selected == index ? '  mr-2 text-[.8em]' : '  mr-2 text-[.8em] NoSelected'} />
+                            <span className={selected == index ? 'text-[.65em]' : ' text-[.65em] text-[#c0c0c0]'}>{value.domain}</span>
                         </div>)
                 }
             </div>
             <div className=" flex flex-col space-y-2">
                 {
                     dataAvailable_2.map((value, index) =>
-                        <div className={selected == index ? "flex items-center" : " flex items-center"}
+                        <div className={selected == index ? "Selected flex items-center choise" : " flex items-center choise"}
                             key={index}>
-                            <FontAwesomeIcon icon={faCircle} className={selected == index ? 'NoSelected  mr-2 text-[.8em]' : '  mr-2 text-[.8em] NoSelected'} />
-                            <span className={selected == index ? 'text-[.65em] text-[#c0c0c0]' : ' text-[.65em] text-[#c0c0c0]'}>{value.domain}</span>
+                            <FontAwesomeIcon icon={faCircle} className={selected == index ? '  mr-2 text-[.8em]' : '  mr-2 text-[.8em] NoSelected'} />
+                            <span className={selected == index ? 'text-[.65em] ' : ' text-[.65em] text-[#c0c0c0]'}>{value.domain}</span>
                         </div>)
                 }
             </div>

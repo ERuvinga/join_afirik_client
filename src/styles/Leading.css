@@ -8,7 +8,6 @@
     background-color: white;
     color: black;
     border-radius: 30px;
-
     transition: all .6s ease-in-out;
 }
 
@@ -36,7 +35,7 @@
     border-radius: 20px;
 }
 
-.levelSelected {
+.Selected {
     color: #2b23b5;
 }
 

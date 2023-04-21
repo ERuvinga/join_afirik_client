@@ -31,33 +31,34 @@ const levelFilter = atom( // le filtre actuel pour le niveau
 );
 
 // filtreur de  level 
-const filteredLevelState = selector({
-    key: 'filteredLevelState',
-    get: ({ get }) => {
+const filteredLevelState = selector
+    ({
+        key: 'filteredLevelState',
+        get: ({ get }) => {
 
-        const filter = get(levelFilter);
-        const list = get(JobstList);
+            const filter = get(levelFilter);
+            const list = get(JobstList);
 
-        switch (filter) {
-            case 0:
-                return list.filter((item: any) => item.yearsOfExperience >= 8);
+            switch (filter) {
+                case 0:
+                    return list.filter((item: any) => item.yearsOfExperience >= 8);
 
-            case 1:
-                return list.filter((item: any) => (item.yearsOfExperience >= 5) && (item.yearsOfExperience <= 7));
+                case 1:
+                    return list.filter((item: any) => (item.yearsOfExperience >= 5) && (item.yearsOfExperience <= 7));
 
-            case 2:
-                return list.filter((item: any) => (item.yearsOfExperience >= 2) && (item.yearsOfExperience <= 4));
+                case 2:
+                    return list.filter((item: any) => (item.yearsOfExperience >= 2) && (item.yearsOfExperience <= 4));
 
-            case 3:
-                return list.filter((item: any) => item.yearsOfExperience == 1);
-            case null:
-                return list;
+                case 3:
+                    return list.filter((item: any) => item.yearsOfExperience == 1);
+                case null:
+                    return list;
+            }
+
+
         }
 
-
-    }
-
-});
+    });
 
 
 const AvailabilityFilter = atom(
