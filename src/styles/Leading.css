@@ -8,7 +8,6 @@
     background-color: white;
     color: black;
     border-radius: 30px;
-
     transition: all .6s ease-in-out;
 }
 
@@ -36,7 +35,7 @@
     border-radius: 20px;
 }
 
-.levelSelected {
+.Selected {
     color: #2b23b5;
 }
 
@@ -92,8 +91,6 @@
 }
 
 .iconDescrpt {
-    width: 15px;
-    height: 15px;
     padding: 2px;
     border: #8186A0 solid .5px;
     border-radius: 50%;
@@ -102,7 +99,6 @@
 .dollars {
     border: #8186A0 solid 1px;
     border-radius: 10px;
-    padding: 2px 10px;
 }
 
 .linet {
@@ -121,8 +117,6 @@
 }
 
 .imageClient {
-    width: 30px;
-    height: 30px;
     border-radius: 50%;
 
 }

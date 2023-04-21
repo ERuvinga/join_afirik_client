@@ -2,14 +2,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 import { useRecoilState } from 'recoil';
-import { levelFilter } from '../State';
+import { levelFilter, } from '../State';
 
 const levlFilter = () => {
     let filterlevel: any
-    const Filter = useRecoilState(levelFilter)
+    const Filter = useRecoilState(levelFilter);
+
 
     filterlevel = Filter[0];
     const setLevelFilter = Filter[1]; //setter function to change data of levelfilter
+
 
     const dataLevel = [
         {
@@ -34,18 +36,19 @@ const levlFilter = () => {
             }
 
             else {
-                return item
+                return item;
             }
+
         })
     };
 
     return (
-        <div className=" flex flex-col space-y-2">
+        <div className=" mt-2 flex space-x-2 sm:space-x-3 md_lg:flex-col md_lg:space-x-0 md_lg:space-y-2">
             {
                 dataLevel.map((value, index) =>
-                    <div onClick={() => changeFilter(index)} className={filterlevel == index ? "levelSelected font-semibold flex items-center choise " : "choise flex items-center"}
+                    <div onClick={() => changeFilter(index)} className={filterlevel == index ? "Selected  flex items-center choise " : "choise flex items-center"}
                         key={index}>
-                        <FontAwesomeIcon icon={faCircle} className={filterlevel == index ? '  mr-2 text-[.8em]' : '  mr-2 text-[.8em] NoSelected'} />
+                        <FontAwesomeIcon icon={faCircle} className={filterlevel == index ? ' mr-1 md_lg:mr-2 text-[.8em]' : ' mr-1 md_lg:mr-2 text-[.8em] NoSelected'} />
                         <span className={filterlevel == index ? 'text-[.65em]' : ' text-[.65em] text-[#c0c0c0]'} >{value.level}</span>
                     </div>)
             }

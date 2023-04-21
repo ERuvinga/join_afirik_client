@@ -12,9 +12,10 @@
 
 .bell,
 .persona {
-    padding: 1px;
+    padding: 2px;
     border: #8186A0 solid 1px;
     border-radius: 50%;
+
 }
 
 input:focus,

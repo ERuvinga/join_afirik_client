@@ -27,30 +27,32 @@ const Menu = () => {
     ]
 
     return (
-        <div className=' w-[25%] flex flex-col items-center pt-20 space-y-4'>
-            <div className=' h-[90px] w-[90px] '>
-                <Image
-                    src="/user.jpg"
-                    alt="User"
-                    className="imageProfil"
-                    width={100}
-                    height={150}
-                    priority
-                />
+        <div className=' w-[100%] md:w-[25%] flex md:flex-col md:items-center justify-center md:pt-2 md:pt-24 md:space-y-4'>
+            <div className=' hidden md:flex flex-col items-center justify-center space-y-4'>
+                <div className='md:h-[90px] md:w-[90px] '>
+                    <Image
+                        src="/user.jpg"
+                        alt="User"
+                        className="imageProfil"
+                        width={1}
+                        height={1}
+                        priority
+                    />
+                </div>
+                <span className='text-[#2b23b5] font-bold text-[.8em] '>Elie Ruvinga</span>
+                <span className='text-[#8186A0] text-[.6em] '>ruvingaelie@gmail.com</span>
             </div>
-            <span className='text-[#2b23b5] font-bold text-[.8em]'>Elie Ruvinga</span>
-            <span className='text-[#8186A0] text-[.6em]'>ruvingaelie@gmail.com</span>
-            <div className='Menu w-[90%] p-3 flex flex-col space-y-2'>
+            <div className='Menu w-[95%] sm:w-[90%] p-3 flex flex-col space-y-2 mobile:space-y-0 mobile:flex-row md:flex-col justify-around md:space-y-2 '>
                 {
                     DataOfMenu.map((value, index) =>
                         <div
-                            className={selected == index ? 'MenuSelected flex items-center justify-between p-2' : ' flex items-center justify-between px-2 py-1 text-[#2b23b5]'}
+                            className={selected == index ? 'MenuSelected flex items-center justify-between p-2 mobile:space-x-2' : ' flex items-center justify-between p-2 md:px-2 md:py-1 text-[#2b23b5] mobile:space-x-2'}
                             key={index}>
-                            <div className=' flex items-center'>
+                            <div className=' flex md:w-[100%] items-center mobile:px-1'>
                                 <FontAwesomeIcon
-                                    className={selected == index ? 'mr-4 text-[1.1em] text-[#f]' : 'text-[1.1em] mr-4 text-[#8186A0]'}
+                                    className={selected == index ? 'mr-4 text-[.9em] md:text-[1.1em] text-[#f]' : 'text-[.9em] md:text-[1.1em] mr-4 text-[#8186A0]'}
                                     icon={value.icone} />
-                                <span className='text-[.65em]'>{value.texte}</span>
+                                <span className='text-[.5em] md:text-[.65em]'>{value.texte}</span>
                             </div>
                             <FontAwesomeIcon
                                 className={selected == index ? 'mr-4 text-[#f]' : 'mr-4 text-[#2b23b5]'}
@@ -58,7 +60,7 @@ const Menu = () => {
                         </div>)
                 }
             </div>
-            <div className=' Menu w-[90%] p-3 flex flex-col space-y-2'>
+            <div className='hidden Menu w-[90%] p-3 md:flex flex-col space-y-2'>
                 {
                     arrayWeb.map((value, index) =>
                         <div key={index} className='w-[100%] flex items-center justify-between'>
