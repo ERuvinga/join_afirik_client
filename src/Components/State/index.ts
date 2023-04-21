@@ -36,23 +36,40 @@ const filteredLevelState = selector
         key: 'filteredLevelState',
         get: ({ get }) => {
 
-            const filter = get(levelFilter);
-            const list = get(JobstList);
+            const lvlFilter = get(levelFilter);
+            let AllJobslist = get(JobstList);
+            let list: [];
 
-            switch (filter) {
+            switch (lvlFilter) {
                 case 0:
-                    return list.filter((item: any) => item.yearsOfExperience >= 8);
+                    AllJobslist = AllJobslist.filter((item: any) => item.yearsOfExperience >= 8);
+                    break;
 
                 case 1:
-                    return list.filter((item: any) => (item.yearsOfExperience >= 5) && (item.yearsOfExperience <= 7));
+                    AllJobslist = AllJobslist.filter((item: any) => (item.yearsOfExperience >= 5) && (item.yearsOfExperience <= 7));
+                    break;
 
                 case 2:
-                    return list.filter((item: any) => (item.yearsOfExperience >= 2) && (item.yearsOfExperience <= 4));
+                    AllJobslist = AllJobslist.filter((item: any) => (item.yearsOfExperience >= 2) && (item.yearsOfExperience <= 4));
+                    break;
 
                 case 3:
-                    return list.filter((item: any) => item.yearsOfExperience == 1);
+                    AllJobslist = AllJobslist.filter((item: any) => item.yearsOfExperience == 1);
+                    break;
+
+            }
+
+            // filter per availableTime
+            const Avalfilter = get(AvailabilityFilter);
+            switch (Avalfilter) {
+                case 0:
+                    return AllJobslist.filter((item: any) => item.availableTime === 'PART_TIME');
+
+                case 1:
+                    return AllJobslist.filter((item: any) => item.availableTime === 'PLEIN_TIME');
+
                 case null:
-                    return list;
+                    return AllJobslist;
             }
 
 
@@ -67,26 +84,6 @@ const AvailabilityFilter = atom(
         default: null
     }
 );
-
-// filtreur disponibilité
-const AvalaibleTime = selector({
-    key: "AvalaibleTime",
-    get: ({ get }) => {
-        const list = get(jobFilters);
-        const filter = get(AvailabilityFilter);
-
-        switch (filter) {
-            case 0:
-                return list.filter((item: any) => item.availableTime === 'PART_TIME');
-
-            case 1:
-                return list.filter((item: any) => item.availableTime === 'PLEIN_TIME');
-
-            case null:
-                return list;
-        }
-    }
-})
 
 //languageFilter [1]
 //DomainesFilters[3]
