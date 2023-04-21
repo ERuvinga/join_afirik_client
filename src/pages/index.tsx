@@ -48,7 +48,7 @@ export default function Home() {
       <Nav />
       <div className='w-[100%] md_lg:[90%] mx-auto py-4 flex flex-col md:flex-row md:justify-between'>
         <Menu />
-        <div className=' w-[100%] w-[90%] md:w-[85%] mx-auto'>
+        <div className='w-[90%] md:w-[85%] mx-auto'>
           <div className=' w-[100%] h-[80px] py-1 justify-around mobile:p-0 mobile:h-[100px] flex flex-col FilterPoint:flex-row items-center justify-between md_lg:justify-start '>
             <span className='text-[#8186A0] text-[.6em] sm:text-[.8em] font-bold md_lg:pr-32'>Trouvez un travail</span>
             <ShowFilter />

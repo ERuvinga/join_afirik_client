@@ -10,7 +10,7 @@ const DescriptionUser = (datasJobs: dataofJob) => {
         <>
             <div className='DescriptUser w-[100%] py-2'>
                 <div className=" py-2 px-3 flex items-center justify-between">
-                    <span className=" w-[54%] FilterPoint:w-fit font-bold text-[.4em] FilterPoint:text-[.5em] sm:text-[.7em]">
+                    <span className=" w-[54%] FilterPoint:px-3 FilterPoint:w-fit font-bold text-[.4em] FilterPoint:text-[.5em] sm:text-[.7em]">
                         Rediger la documentation de mon nouveau systeme de controle
                     </span>
                     <div className=" text-[#8186A0] flex items-center space-x-1 mobile:space-x-3">

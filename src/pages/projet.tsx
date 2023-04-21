@@ -66,15 +66,15 @@ const Elie = () => {
 
             <Header />
             <Nav />
-            <div className='w-[95%] mx-auto pb-4 flex justify-between'>
+            <div className='w-[100%] md_lg:[90%] mx-auto py-4 flex flex-col md:flex-row md:justify-between'>
                 <Menu />
-                <div className=' w-[85%]'>
-                    <div className=' w-[100%] h-[100px] flex items-center '>
-                        <span className='text-[#8186A0] text-[.8em] font-bold pr-32'>Ajouter un projet</span>
+                <div className=' w-[95%] sm:w-[90%] mx-auto'>
+                    <div className=' w-[100%] h-[60px] py-1 mobile:p-0 sm:h-[100px] flex items-center FilterPoint:flex-row'>
+                        <span className='text-[#8186A0] text-[.6em] sm:text-[.8em] font-bold '>Ajouter un projet</span>
                     </div>
-                    <div className=' w-[100%] mx-auto flex justify-between'>
-                        <div className='ContDescrptproject w-[75%] p-4 flex'>
-                            <div className='flex flex-col w-[55%] px-1 '>
+                    <div className=' mx-auto flex flex-col-reverse space-y-1 md_lg:space-x-1 md_lg:space-y-0 md_lg:flex-row  md_lg:justify-between '>
+                        <div className='ContDescrptproject border mt-1 w-[100%] md_lg:w-[75%] flex flex-col-reverse FilterPoint:flex-row items-around FilterPoint:items-start FilterPoint:justify-between p-4'>
+                            <div className='flex border flex-col w-[100%] FilterPoint:w-[55%] mt-1 px-1 '>
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold'>Titre</span>
                                 <div className='w-[100%] flex my-1 items-center'>
                                     <input className='text-[.65em] w-[100%] text-[#8186A0] font-normal inputExig' type='text' placeholder="Ex: Site Web d'information" />
@@ -91,14 +91,14 @@ const Elie = () => {
                                 </div>
 
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold my-1'>Joindre des fichiers</span>
-                                <div className='w-[60%] flex py-1 px-2 items-center justify-between UploadFile'>
+                                <div className='w-[80%] FilterPoint:w-[60%] flex py-1 px-2 items-center justify-between UploadFile'>
                                     <span className='text-[.5em] text-[#8186A0] '>Choisir un fichier</span>
                                     <button className='text-[.5em] text-[#8186A0] fileBtn '>Browser</button>
                                     <button className='text-[.5em] text-[#8186A0] fileBtn ' >Upload</button>
                                 </div>
 
                             </div>
-                            <div className='flex flex-col w-[45%] px-1'>
+                            <div className='flex flex-col border w-[100%] FilterPoint:w-[45%] px-1'>
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold '>Exigences</span>
                                 <div className='flex flex-col w-[100%] my-1 space-y-1'>
                                     <span className='flex flex-col space-y-1'>
@@ -126,14 +126,14 @@ const Elie = () => {
 
                             </div>
                         </div>
-                        <div className=' w-[25%] flex flex-col items-center space-y-2'>
-                            <div className='blocFilter w-[95%] px-4 pt-8 pb-2 flex flex-col space-y-3'>
+                        <div className='flex flex-col items-center justify-between md_lg:flex-col md_lg:w-[25%] md_lg:items-center'>
+                            <div className='blocFilter my-1 p-4 w-[100%] md_lg:m-0 md_lg:pt-8 flex flex-col justify-around mobile:flex-row mobile:items-center justify-around md_lg:items-start md_lg:justify-between md_lg:space-y-2 md_lg:flex-col'>
                                 {
                                     dataFilter.map((value, index) =>
                                         <span key={index}
                                             className={value.selected ?
-                                                'text-[.6em] text-[#2b23b5] font-extrabold flex items-center space-x-1 ' :
-                                                'text-[.6em] text-[#8186A0] font-bold flex items-center space-x-1 '}>
+                                                ' text-[.6em] text-[#2b23b5] font-extrabold flex items-center space-x-1 ' :
+                                                ' text-[.6em] text-[#8186A0] font-bold flex items-center space-x-1 '}>
                                             <FontAwesomeIcon icon={faCheck} /><span>{value.text}</span> </span>)
                                 }
                             </div>
