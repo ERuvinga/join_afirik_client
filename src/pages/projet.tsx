@@ -73,8 +73,8 @@ const Elie = () => {
                         <span className='text-[#8186A0] text-[.6em] sm:text-[.8em] font-bold '>Ajouter un projet</span>
                     </div>
                     <div className=' mx-auto flex flex-col-reverse space-y-1 md_lg:space-x-1 md_lg:space-y-0 md_lg:flex-row  md_lg:justify-between '>
-                        <div className='ContDescrptproject border mt-1 w-[100%] md_lg:w-[75%] flex flex-col-reverse FilterPoint:flex-row items-around FilterPoint:items-start FilterPoint:justify-between p-4'>
-                            <div className='flex border flex-col w-[100%] FilterPoint:w-[55%] mt-1 px-1 '>
+                        <div className='ContDescrptproject mt-1 w-[100%] md_lg:w-[75%] flex flex-col-reverse FilterPoint:flex-row items-around FilterPoint:items-start FilterPoint:justify-between p-4'>
+                            <div className='flex  flex-col w-[100%] FilterPoint:w-[55%] mt-1 FilterPoint:m-0 px-1 '>
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold'>Titre</span>
                                 <div className='w-[100%] flex my-1 items-center'>
                                     <input className='text-[.65em] w-[100%] text-[#8186A0] font-normal inputExig' type='text' placeholder="Ex: Site Web d'information" />
@@ -98,14 +98,14 @@ const Elie = () => {
                                 </div>
 
                             </div>
-                            <div className='flex flex-col border w-[100%] FilterPoint:w-[45%] px-1'>
+                            <div className='flex flex-col w-[100%] FilterPoint:w-[45%] px-1'>
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold '>Exigences</span>
                                 <div className='flex flex-col w-[100%] my-1 space-y-1'>
                                     <span className='flex flex-col space-y-1'>
                                         {
                                             exigences.map((item: any, index: any) =>
                                                 <div className='w-[100%] flex space-x-1 items-center' key={index}>
-                                                    <input className='text-[.65em] w-[90%] text-[#8186A0] font-normal inputExig'
+                                                    <input className='text-[.65em] w-[100%] FilterPoint:w-[90%] text-[#8186A0] font-normal inputExig'
                                                         type='text'
                                                         placeholder={item.value} />
                                                     <FontAwesomeIcon className='text-[.85em] text-[#b52323]' icon={faMinusCircle} onClick={() => deleteExigence(index)} />
@@ -114,7 +114,7 @@ const Elie = () => {
 
                                     </span>
                                     <div className='w-[100%] flex space-x-1 items-center'>
-                                        <input className='text-[.65em] w-[90%] text-[#8186A0] font-normal inputExig'
+                                        <input className='text-[.65em] w-[100%] FilterPoint:w-[90%] text-[#8186A0] font-normal inputExig'
                                             type='text'
                                             placeholder='Ex: Maitrise de javascript'
                                             onChange={(event) => {
