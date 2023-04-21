@@ -36,7 +36,7 @@ const levlFilter = () => {
             }
 
             else {
-                return item
+                return item;
             }
 
         })

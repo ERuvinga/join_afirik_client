@@ -67,6 +67,26 @@ const AvailabilityFilter = atom(
     }
 );
 
+// filtreur disponibilité
+const AvalaibleTime = selector({
+    key: "AvalaibleTime",
+    get: ({ get }) => {
+        const list = get(jobFilters);
+        const filter = get(AvailabilityFilter);
+
+        switch (filter) {
+            case 0:
+                return list.filter((item: any) => item.availableTime === 'PART_TIME');
+
+            case 1:
+                return list.filter((item: any) => item.availableTime === 'PLEIN_TIME');
+
+            case null:
+                return list;
+        }
+    }
+})
+
 //languageFilter [1]
 //DomainesFilters[3]
 
