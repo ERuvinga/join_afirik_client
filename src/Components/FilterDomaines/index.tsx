@@ -41,7 +41,7 @@ const levlFilter = () => {
         }
     ]
     return (
-        <div className='mt-2 space-x-4 flex items-center justify-between'>
+        <div className='mt-2 space-x-5 justify-start flex items-center sm:justify-between'>
             <div className=" flex flex-col space-y-2">
                 {
                     dataAvailable_1.map((value, index) =>

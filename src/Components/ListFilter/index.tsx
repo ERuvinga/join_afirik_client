@@ -30,7 +30,7 @@ const listFilter = () => {
                     }
                     }
                         className={
-                            fieldSelected == i ? " choise selectField  text-[.75em] px-8 py-1 md_lg:py-2 " : "choise text-[#8186A0] text-[.75em] px-7 md_lg:px-7 py-1 md_lg:py-2"}
+                            fieldSelected == i ? " choise selectField text-[.4em] sm:text-[.75em] px-8 py-1 md_lg:py-2 " : "choise text-[#8186A0]  text-[.4em] sm:text-[.75em] px-7 md_lg:px-7 py-1 md_lg:py-2"}
                         key={i}>
                         {value.content}
                     </span>)

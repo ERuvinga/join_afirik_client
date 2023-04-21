@@ -42,13 +42,13 @@ const Menu = () => {
                 <span className='text-[#2b23b5] font-bold text-[.8em] '>Elie Ruvinga</span>
                 <span className='text-[#8186A0] text-[.6em] '>ruvingaelie@gmail.com</span>
             </div>
-            <div className='Menu w-[90%] p-3 flex md:flex-col justify-around md:space-y-2 '>
+            <div className='Menu w-[95%] sm:w-[90%] p-3 flex flex-col space-y-2 mobile:space-y-0 mobile:flex-row md:flex-col justify-around md:space-y-2 '>
                 {
                     DataOfMenu.map((value, index) =>
                         <div
-                            className={selected == index ? 'MenuSelected flex items-center justify-between p-2 space-x-2' : ' flex items-center justify-between md:px-2 md:py-1 text-[#2b23b5] space-x-2'}
+                            className={selected == index ? 'MenuSelected flex items-center justify-between p-2 mobile:space-x-2' : ' flex items-center justify-between p-2 md:px-2 md:py-1 text-[#2b23b5] mobile:space-x-2'}
                             key={index}>
-                            <div className='flex md:w-[100%] items-center px-1'>
+                            <div className=' flex md:w-[100%] items-center mobile:px-1'>
                                 <FontAwesomeIcon
                                     className={selected == index ? 'mr-4 text-[.9em] md:text-[1.1em] text-[#f]' : 'text-[.9em] md:text-[1.1em] mr-4 text-[#8186A0]'}
                                     icon={value.icone} />

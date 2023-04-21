@@ -26,18 +26,18 @@ const DataLinks = [
 
 const Nav = () => {
     return (
-        <div className='border ContainerNav w-[100%]'>
+        <div className=' ContainerNav w-[100%]'>
             <nav className='  max-w-[1200px] w-[100%] mx-auto flex flex-col items-center justify-between space-y-2 py-2 md:flex-row md:items-center md:justify-around px-8 md:space-y-0'>
                 <div className=' w-[100%] md:w-[45%] md:h-[100%] flex items-center justify-between'>
                     <img alt='logo' src='/favicon.png' className=' NavLogo' />
-                    <div className=' pr-4 w-[70%] flex items-center justify-between space-x-4'>
+                    <div className=' pr-4 w-[70%] flex items-center justify-between space-x-1 sm:space-x-4'>
                         {DataLinks.map((datas, index) =>
                             <Link
-                                className='  flex items-center'
+                                className='flex items-center'
                                 href={datas.link}
                                 key={index}>
                                 {
-                                    <span className='text-[.4em] mobile:text-[.55em] md_lg:text-[.72em] text-[#8186A0]'>{datas.content}</span>
+                                    <span className='text-[.43em] mobile:text-[.55em] md_lg:text-[.72em] text-[#8186A0]'>{datas.content}</span>
                                 }
                             </Link>)}
                     </div>
@@ -48,15 +48,15 @@ const Nav = () => {
                         <input type='text' placeholder='Trouver un Emploi' className=' pl-1 text-[.48em]  w-[60%] h-[90%]' />
                         <FontAwesomeIcon className=' w-[30px] h-[10px]' icon={faArrowRight} />
                     </div>
-                    <div className=' p-1 w-[110px] flex items-center '>
+                    <div className=' p-1 w-[110px] flex flex-col mobile:flex-row items-center '>
                         <Image
                             src="/images/persona.png"
                             alt="persona"
-                            className="persona mx-1"
-                            width={22}
-                            height={22}
+                            className="persona mx-2 w-[25px] h-[25px] "
+                            width={1}
+                            height={1}
                             priority />
-                        <span className='text-[.5em] lg:text-[.7em] font-bold text-[#8186A0]'>Elie Ruvinga</span>
+                        <span className='text-[.4em] mobile:text-[.5em] lg:text-[.7em] font-bold text-[#8186A0]'>Elie Ruvinga</span>
                     </div>
                     <Image src="/images/bell.png"
                         alt="bell"

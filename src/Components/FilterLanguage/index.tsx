@@ -22,8 +22,8 @@ const levlFilter = () => {
         }
     ]
     return (
-        <div className=' mt-2 space-x-4 flex items-center justify-between '>
-            <div className=" flex flex-col space-y-2">
+        <div className=' mt-2 space-x-5 flex justify-start sm:items-center sm:justify-between '>
+            <div className=" flex flex-col space-y-2 ">
                 {
                     dataAvailable_1.map((value, index) =>
                         <div className={selected == index ? "choise flex items-center" : "choise flex items-center"}
@@ -33,7 +33,7 @@ const levlFilter = () => {
                         </div>)
                 }
             </div>
-            <div className=" flex flex-col space-y-2">
+            <div className=" flex flex-col space-y-2 ">
                 {
                     dataAvailable_2.map((value, index) =>
                         <div className={selected == index ? "Selected choise flex items-center" : "choise flex items-center"}

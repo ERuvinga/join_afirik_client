@@ -43,7 +43,7 @@ const levlFilter = () => {
     };
 
     return (
-        <div className=" mt-2 flex space-x-3 md_lg:flex-col md_lg:space-x-0 md_lg:space-y-2">
+        <div className=" mt-2 flex space-x-2 sm:space-x-3 md_lg:flex-col md_lg:space-x-0 md_lg:space-y-2">
             {
                 dataLevel.map((value, index) =>
                     <div onClick={() => changeFilter(index)} className={filterlevel == index ? "Selected  flex items-center choise " : "choise flex items-center"}
