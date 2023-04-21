@@ -53,11 +53,11 @@ export default function Home() {
             <span className='text-[#8186A0] text-[.6em] sm:text-[.8em] font-bold md_lg:pr-32'>Trouvez un travail</span>
             <ShowFilter />
           </div>
-          <div className='border w-[100%] mx-auto flex flex-col-reverse justify-center md_lg:flex-row '>
+          <div className=' w-[100%] mx-auto flex flex-col-reverse justify-center md_lg:flex-row '>
             {
               Loading ? <LoadingComponent /> :
 
-                <div className='ContDescrptUser  w-[100%] md_lg:w-[75%] p-4 flex flex-col space-y-2'>
+                <div className='ContDescrptUser w-[100%] md_lg:w-[75%] p-2 FilterPoint:p-4 flex flex-col space-y-2'>
                   {
                     jobFilter.map((job: any, index: any) => <DescriptionUser key={index} data={job} />)
                   }

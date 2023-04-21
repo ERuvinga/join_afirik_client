@@ -52,7 +52,7 @@ const Nav = () => {
                         <Image
                             src="/images/persona.png"
                             alt="persona"
-                            className="persona mx-2 w-[25px] h-[25px] "
+                            className="persona mx-1 w-[25px] h-[25px] "
                             width={1}
                             height={1}
                             priority />
