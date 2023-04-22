@@ -127,7 +127,7 @@ const Elie = () => {
                             </div>
                         </div>
                         <div className='flex flex-col items-center justify-between md_lg:flex-col md_lg:w-[25%] md_lg:items-center'>
-                            <div className='blocFilter my-1 p-4 w-[100%] md_lg:m-0 md_lg:pt-8 flex flex-col justify-around mobile:flex-row mobile:items-center justify-around md_lg:items-start md_lg:justify-between md_lg:space-y-2 md_lg:flex-col'>
+                            <div className='blocFilter space-y-2 my-1 p-4 w-[100%] md_lg:m-0 md_lg:pt-8 flex flex-col justify-around mobile:flex-row mobile:space-y-0 mobile:items-center justify-around md_lg:items-start md_lg:justify-between md_lg:space-y-2 md_lg:flex-col'>
                                 {
                                     dataFilter.map((value, index) =>
                                         <span key={index}

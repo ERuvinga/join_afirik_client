@@ -16,6 +16,7 @@ import { faAdd } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { JobstList, jobFilters, filteredLevelState } from '../Components/State'
+import Link from 'next/link'
 
 export default function Home() {
   let jobFilter: [] | any;
@@ -48,7 +49,7 @@ export default function Home() {
       <Nav />
       <div className='w-[100%] md_lg:w-[90%] mx-auto py-4 flex flex-col md:flex-row md:justify-between'>
         <Menu />
-        <div className='w-[90%] md:w-[85%] mx-auto'>
+        <div className='w-[100%] md:w-[85%] mx-auto'>
           <div className=' w-[100%] h-[80px] py-1 justify-around mobile:p-0 mobile:h-[100px] flex flex-col FilterPoint:flex-row items-center justify-between md_lg:justify-start '>
             <span className='text-[#8186A0] text-[.6em] sm:text-[.8em] font-bold md_lg:pr-32'>Trouvez un travail</span>
             <ShowFilter />
@@ -105,7 +106,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='w-[95%] flex items-center justify-end'>
-                <button className='addProjetBtn font-bold text-[.55em] py-2 px-4'><FontAwesomeIcon className="mr-2" icon={faAdd} /> Ajouter Projet</button>
+                <Link href='/projet' className='addProjetBtn flex items-center justify-around space-x-2 font-bold text-[.55em] py-2 px-4'><FontAwesomeIcon icon={faAdd} /><span>Ajouter Projet</span> </Link>
               </div>
             </div>
           </div>
