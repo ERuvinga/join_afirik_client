@@ -29,13 +29,13 @@ const Menu = () => {
     return (
         <div className=' w-[100%] md:w-[25%] flex md:flex-col md:items-center justify-center md:pt-2 md:pt-24 md:space-y-4'>
             <div className=' hidden md:flex flex-col items-center justify-center space-y-4'>
-                <div className='md:h-[90px] md:w-[90px] '>
+                <div >
                     <Image
                         src="/user.jpg"
                         alt="User"
                         className="imageProfil"
-                        width={1}
-                        height={1}
+                        width={80}
+                        height={80}
                         priority
                     />
                 </div>

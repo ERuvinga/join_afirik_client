@@ -66,7 +66,7 @@ const Elie = () => {
 
             <Header />
             <Nav />
-            <div className='w-[100%] md_lg:[90%] mx-auto py-4 flex flex-col md:flex-row md:justify-between'>
+            <div className='w-[100%] md_lg:w-[90%] mx-auto py-4 flex flex-col md:flex-row md:justify-between'>
                 <Menu />
                 <div className=' w-[95%] sm:w-[90%] mx-auto'>
                     <div className=' w-[100%] h-[60px] py-1 mobile:p-0 sm:h-[100px] flex items-center FilterPoint:flex-row'>
