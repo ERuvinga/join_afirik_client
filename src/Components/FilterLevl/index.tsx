@@ -4,7 +4,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { useRecoilState } from 'recoil';
 import { levelFilter, } from '../State';
 
-const levlFilter = () => {
+const LevlFilter = () => {
     let filterlevel: any
     const Filter = useRecoilState(levelFilter);
 
@@ -56,4 +56,4 @@ const levlFilter = () => {
     )
 }
 
-export default levlFilter;
+export default LevlFilter;
