@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
-const levlFilter = () => {
+const DomFilter = () => {
     const selected = null;
     const dataAvailable_1 = [
         {
@@ -66,4 +66,4 @@ const levlFilter = () => {
     )
 }
 
-export default levlFilter;
+export default DomFilter;

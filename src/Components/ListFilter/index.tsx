@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import { AllRecentSavedFilter } from "../State";
 
-const listFilter = () => {
+const ListFilter = () => {
     let fieldSelected: any;
 
     // recoil data
@@ -39,4 +39,4 @@ const listFilter = () => {
     )
 }
 
-export default listFilter;
+export default ListFilter;

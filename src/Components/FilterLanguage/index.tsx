@@ -6,7 +6,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { useRecoilState } from 'recoil';
 import { languageFilter } from '../State';
 
-const LevlFilter = () => {
+const LangFilter = () => {
     const selected = null;
     const [langFilter, setLangFilter] = useRecoilState(languageFilter)
     const dataAvailable_1 = [
@@ -70,4 +70,4 @@ const LevlFilter = () => {
     )
 }
 
-export default LevlFilter;
+export default LangFilter;

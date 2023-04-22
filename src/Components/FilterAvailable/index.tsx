@@ -5,7 +5,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { useRecoilState } from 'recoil'
 import { AvailabilityFilter } from '../State'
 
-const avalFilter = () => {
+const AvalFilter = () => {
     let filterAval: any
     const Filter = useRecoilState(AvailabilityFilter)
 
@@ -52,4 +52,4 @@ const avalFilter = () => {
     )
 }
 
-export default avalFilter;
+export default AvalFilter;
