@@ -27,22 +27,22 @@ const LangFilter = () => {
         }
     ]
 
-    const changeFilterFirst = (item: any) => {
-        setLangFilter((oldData: any) => {
-            console.log(oldData);
-            console.log(item);
+    // const changeFilterFirst = (item: any) => {
+    //     setLangFilter((oldData: any) => {
+    //         console.log(oldData);
+    //         console.log(item);
 
-            // if (oldData === item) {
-            //     return null;
-            // }
+    //         // if (oldData === item) {
+    //         //     return null;
+    //         // }
 
-            // else {
-            //     return item;
-            // }
-            return null;
+    //         // else {
+    //         //     return item;
+    //         // }
+    //         return null;
 
-        })
-    };
+    //     })
+    // };
 
     return (
         <div className=' mt-2 space-x-5 flex justify-start sm:items-center sm:justify-between '>
