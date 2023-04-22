@@ -30,6 +30,14 @@ const levelFilter = atom( // le filtre actuel pour le niveau
     }
 );
 
+const languageFilter = atom({
+    key: "languageFilter",
+    default: {
+        first: 0,
+        second: 0,
+    }
+})
+
 // filtreur de  level 
 const filteredLevelState = selector
     ({
@@ -38,7 +46,6 @@ const filteredLevelState = selector
 
             const lvlFilter = get(levelFilter);
             let AllJobslist = get(JobstList);
-            let list: [];
 
             switch (lvlFilter) {
                 case 0:
@@ -94,4 +101,4 @@ const AllRecentSavedFilter = atom(
         default: 0
     }
 )
-export { ExigenceList, JobstList, jobFilters, levelFilter, AvailabilityFilter, AllRecentSavedFilter, filteredLevelState };
+export { ExigenceList, JobstList, jobFilters, levelFilter, AvailabilityFilter, AllRecentSavedFilter, filteredLevelState, languageFilter };
