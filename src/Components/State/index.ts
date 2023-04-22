@@ -30,13 +30,15 @@ const levelFilter = atom( // le filtre actuel pour le niveau
     }
 );
 
-const languageFilter = atom({
+const languageFilter = atom({ //languageFilter
     key: "languageFilter",
-    default: {
-        first: 0,
-        second: 0,
-    }
-})
+    default: [0, 0, 0, 0]
+});
+
+const domainesFilter = atom({//DomainesFilters
+    key: "domainesFilter",
+    default: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+});
 
 // filtreur de  level 
 const filteredLevelState = selector
@@ -92,8 +94,6 @@ const AvailabilityFilter = atom(
     }
 );
 
-//languageFilter [1]
-//DomainesFilters[3]
 
 const AllRecentSavedFilter = atom(
     {
@@ -101,4 +101,14 @@ const AllRecentSavedFilter = atom(
         default: 0
     }
 )
-export { ExigenceList, JobstList, jobFilters, levelFilter, AvailabilityFilter, AllRecentSavedFilter, filteredLevelState, languageFilter };
+export {
+    ExigenceList,
+    JobstList,
+    jobFilters,
+    levelFilter,
+    AvailabilityFilter,
+    AllRecentSavedFilter,
+    filteredLevelState,
+    languageFilter,
+    domainesFilter
+};
