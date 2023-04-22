@@ -42,7 +42,7 @@ const languageFilter = atom({
 const filteredLevelState = selector
     ({
         key: 'filteredLevelState',
-        get: ({ get }) => {
+        get: ({ get }: any) => {
 
             const lvlFilter = get(levelFilter);
             let AllJobslist = get(JobstList);
