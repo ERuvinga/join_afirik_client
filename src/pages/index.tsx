@@ -46,7 +46,7 @@ export default function Home() {
     <>
       <HeadApp />
       <Nav />
-      <div className='w-[100%] md_lg:[90%] mx-auto py-4 flex flex-col md:flex-row md:justify-between'>
+      <div className='w-[100%] md_lg:w-[90%] mx-auto py-4 flex flex-col md:flex-row md:justify-between'>
         <Menu />
         <div className='w-[90%] md:w-[85%] mx-auto'>
           <div className=' w-[100%] h-[80px] py-1 justify-around mobile:p-0 mobile:h-[100px] flex flex-col FilterPoint:flex-row items-center justify-between md_lg:justify-start '>
