@@ -3,14 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 //recoil 
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { languageFilter } from '../State';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { languageFilter, langFiltreTabValue } from '../State';
+import { SearchTabLang } from '../State/filterLangDomain';
 
 const LangFilter = () => {
     let langFilter: [] | any;
 
     // recoil values
     const setLangFilter = useSetRecoilState(languageFilter);
+    const setTabLangValue = useSetRecoilState(langFiltreTabValue);
     langFilter = useRecoilValue(languageFilter);
 
     const dataAvailable_1 = [
@@ -36,9 +38,6 @@ const LangFilter = () => {
         setLangFilter((oldData: any) => {
             oldTab = [...oldData]; // copy old state
 
-            console.log(oldTab);
-            console.log(item);
-
             if (oldTab[item - 1] === item) {
                 oldTab[item - 1] = 0;
             }
@@ -46,9 +45,13 @@ const LangFilter = () => {
             else {
                 oldTab[item - 1] = item;
             }
-            return [...oldTab];
 
-        })
+            // saved dataof filter and convert number by Equivalent Lang
+            return [...oldTab];
+        });
+
+        setTabLangValue(SearchTabLang(oldTab));
+
     };
 
     return (

@@ -14,8 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdd } from '@fortawesome/free-solid-svg-icons'
 
 import { useEffect, useState } from 'react'
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { JobstList, jobFilters, filteredLevelState } from '../Components/State'
+import { useSetRecoilState, useRecoilValue } from 'recoil'
+import { JobstList, filteredLevelState } from '../Components/State'
 import Link from 'next/link'
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
 
 
   //assign
-  const [jobs, setJob] = useRecoilState(JobstList);
+  const setJob = useSetRecoilState(JobstList);
   const [Loading, setLoading] = useState(true)
 
   useEffect(() => {

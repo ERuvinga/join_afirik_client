@@ -30,6 +30,12 @@ const levelFilter = atom( // le filtre actuel pour le niveau
     }
 );
 
+// pour les filtres multi select 
+const langFiltreTabValue = atom({
+    key: 'langFiltreTabValue',
+    default: []
+})
+
 const languageFilter = atom({ //languageFilter
     key: "languageFilter",
     default: [0, 0, 0, 0]
@@ -65,7 +71,23 @@ const filteredLevelState = selector
                 case 3:
                     AllJobslist = AllJobslist.filter((item: any) => item.yearsOfExperience == 1);
                     break;
+            };
 
+            //filter by languages
+            const langFilter = get(langFiltreTabValue);
+            if (langFilter.length > 0) {
+                AllJobslist = AllJobslist.filter((job: any) => {
+                    if (langFilter.length != job.languages.length)
+                        return false;
+
+                    else {
+                        let validate = 1;
+                        for (let i = 0; i < job.languages.length; i++) {
+                            validate = validate * langFilter.includes(job.languages[i]);
+                        }
+                        return validate;
+                    }
+                });
             }
 
             // filter per availableTime
@@ -109,6 +131,7 @@ export {
     AvailabilityFilter,
     AllRecentSavedFilter,
     filteredLevelState,
+    langFiltreTabValue,
     languageFilter,
     domainesFilter
 };
