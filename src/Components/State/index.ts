@@ -30,13 +30,21 @@ const levelFilter = atom( // le filtre actuel pour le niveau
     }
 );
 
-const languageFilter = atom({
-    key: "languageFilter",
-    default: {
-        first: 0,
-        second: 0,
-    }
+// pour les filtres multi select 
+const langFiltreTabValue = atom({
+    key: 'langFiltreTabValue',
+    default: []
 })
+
+const languageFilter = atom({ //languageFilter
+    key: "languageFilter",
+    default: [0, 0, 0, 0]
+});
+
+const domainesFilter = atom({//DomainesFilters
+    key: "domainesFilter",
+    default: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+});
 
 // filtreur de  level 
 const filteredLevelState = selector
@@ -63,7 +71,23 @@ const filteredLevelState = selector
                 case 3:
                     AllJobslist = AllJobslist.filter((item: any) => item.yearsOfExperience == 1);
                     break;
+            };
 
+            //filter by languages
+            const langFilter = get(langFiltreTabValue);
+            if (langFilter.length > 0) {
+                AllJobslist = AllJobslist.filter((job: any) => {
+                    if (langFilter.length != job.languages.length)
+                        return false;
+
+                    else {
+                        let validate = 1;
+                        for (let i = 0; i < job.languages.length; i++) {
+                            validate = validate * langFilter.includes(job.languages[i]);
+                        }
+                        return validate;
+                    }
+                });
             }
 
             // filter per availableTime
@@ -92,8 +116,6 @@ const AvailabilityFilter = atom(
     }
 );
 
-//languageFilter [1]
-//DomainesFilters[3]
 
 const AllRecentSavedFilter = atom(
     {
@@ -101,4 +123,15 @@ const AllRecentSavedFilter = atom(
         default: 0
     }
 )
-export { ExigenceList, JobstList, jobFilters, levelFilter, AvailabilityFilter, AllRecentSavedFilter, filteredLevelState, languageFilter };
+export {
+    ExigenceList,
+    JobstList,
+    jobFilters,
+    levelFilter,
+    AvailabilityFilter,
+    AllRecentSavedFilter,
+    filteredLevelState,
+    langFiltreTabValue,
+    languageFilter,
+    domainesFilter
+};

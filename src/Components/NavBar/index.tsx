@@ -27,22 +27,20 @@ const DataLinks = [
 const Nav = () => {
     return (
         <div className=' ContainerNav w-[100%]'>
-            <nav className='  max-w-[1200px] w-[100%] mx-auto flex flex-col items-center justify-between space-y-2 py-2 md:flex-row md:items-center md:justify-around px-8 md:space-y-0'>
-                <div className=' w-[100%] md:w-[45%] md:h-[100%] flex items-center justify-between'>
-                    <img alt='logo' src='/favicon.png' className=' NavLogo' />
-                    <div className=' pr-4 w-[70%] flex items-center justify-between space-x-1 sm:space-x-4'>
-                        {DataLinks.map((datas, index) =>
-                            <Link
-                                className='flex items-center'
-                                href={datas.link}
-                                key={index}>
-                                {
-                                    <span className='text-[.43em] mobile:text-[.55em] md_lg:text-[.72em] text-[#8186A0]'>{datas.content}</span>
-                                }
-                            </Link>)}
-                    </div>
+            <nav className='  w-[100%] mx-auto flex flex-col items-start justify-between space-y-2 py-2 md:flex-row md:items-center md:justify-around px-8 md:space-y-0'>
+                <img alt='logo' src='/favicon.png' className=' NavLogo' />
+                <div className=' w-[100%] md:w-[30%] md:h-[100%] flex items-center justify-between sm:space-x-4'>
+                    {DataLinks.map((datas, index) =>
+                        <Link
+                            className='flex items-center'
+                            href={datas.link}
+                            key={index}>
+                            {
+                                <span className='text-[.43em] mobile:text-[.55em] md_lg:text-[.72em] text-[#8186A0]'>{datas.content}</span>
+                            }
+                        </Link>)}
                 </div>
-                <div className=' w-[100%] p-1 md:w-[52%] md:h-[100%]  flex justify-between md:justify-end space-x-4 items-center md_lg:justify-between'>
+                <div className=' w-[100%] p-1 md:w-[40%] md:h-[100%]  flex justify-between md:justify-end space-x-4 items-center md_lg:justify-between'>
                     <div className='searchBtn flex md:hidden  min-w-[30%] h-[25px]  p-1 md_lg:flex items-center justify-around'>
                         <FontAwesomeIcon className=' text-[#8186A0] w-[18px] h-[18px] ' icon={faSearch} />
                         <input type='text' placeholder='Trouver un Emploi' className=' pl-1 text-[.48em]  w-[60%] h-[90%]' />

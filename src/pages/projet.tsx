@@ -73,7 +73,7 @@ const Elie = () => {
                         <span className='text-[#8186A0] text-[.6em] sm:text-[.8em] font-bold '>Ajouter un projet</span>
                     </div>
                     <div className=' mx-auto flex flex-col-reverse space-y-1 md_lg:space-x-1 md_lg:space-y-0 md_lg:flex-row  md_lg:justify-between '>
-                        <div className='ContDescrptproject mt-1 w-[100%] md_lg:w-[75%] flex flex-col-reverse FilterPoint:flex-row items-around FilterPoint:items-start FilterPoint:justify-between p-4'>
+                        <div className='ContDescrptproject mt-1 w-[100%] md_lg:w-[77%] flex flex-col-reverse FilterPoint:flex-row items-around FilterPoint:items-start FilterPoint:justify-between p-4'>
                             <div className='flex  flex-col w-[100%] FilterPoint:w-[55%] mt-1 FilterPoint:m-0 px-1 '>
                                 <span className='text-[.65em] text-[#8186A0] font-extrabold'>Titre</span>
                                 <div className='w-[100%] flex my-1 items-center'>
@@ -126,8 +126,8 @@ const Elie = () => {
 
                             </div>
                         </div>
-                        <div className='flex flex-col items-center justify-between md_lg:flex-col md_lg:w-[25%] md_lg:items-center'>
-                            <div className='blocFilter my-1 p-4 w-[100%] md_lg:m-0 md_lg:pt-8 flex flex-col justify-around mobile:flex-row mobile:items-center justify-around md_lg:items-start md_lg:justify-between md_lg:space-y-2 md_lg:flex-col'>
+                        <div className='flex flex-col items-center justify-between md_lg:flex-col md_lg:w-[23%] md_lg:items-center'>
+                            <div className='blocFilter space-y-2 my-1 p-4 w-[100%] md_lg:m-0 md_lg:pt-8 flex flex-col justify-around mobile:flex-row mobile:space-y-0 mobile:items-center justify-around md_lg:items-start md_lg:justify-between md_lg:space-y-2 md_lg:flex-col'>
                                 {
                                     dataFilter.map((value, index) =>
                                         <span key={index}
